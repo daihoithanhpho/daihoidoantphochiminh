@@ -26,6 +26,12 @@ body {
     padding: 0 8px;
 }
 
+#song1 {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+}
+
 
 /* img {
     width: 100%;
