@@ -1,5 +1,5 @@
 :root {
-    --header-height: 180px;
+    --header-height: 120px;
     --footer-height: 48px;
     --text-color: #4397d5;
 }
@@ -26,13 +26,15 @@ body {
     padding: 0 8px;
 }
 
-img {
+
+/* img {
     width: 100%;
-}
+} */
 
 ::-webkit-scrollbar {
     width: 0px;
 }
+
 
 /* ----------------------------------------- */
 
@@ -62,7 +64,7 @@ img {
 }
 
 .header-left {
-    width: 79px;
+    width: 100px;
     flex-shrink: 0;
 }
 
@@ -72,27 +74,30 @@ img {
     object-fit: cover;
 }
 
-.header-main {
-    color: #3159A6;
-    text-align: center;
-    font-weight: 900;
-}
+.header-main {}
 
-.header-main__text h1{
+.header-main__text {
     text-transform: uppercase;
-    font-size: 2.5em;
     text-align: center;
-    font-weight: 900;
-    color: #3159A6;
+    font-weight: 700;
+    color: var(--text-color);
 }
 
 .header-right {
-    width: 10%;
+    width: 62px;
     flex-shrink: 0;
     cursor: pointer;
 }
 
+.header-main__text h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    color: #3159A6;
+}
+
 .header-right__img {}
+
 
 /* ------------------------------------------- */
 
@@ -132,44 +137,28 @@ img {
 @media (max-width: 1023px) {}
 
 @media (max-width: 767px) {
-    :root {
+     :root {
         --header-height: 80px;
         --footer-height: 36px;
     }
-
     .header-grid {
         gap: 16px;
     }
-
     .header-left {
-        display:none;
+        width: 80px;
     }
-
     .header-right {
-        display:none;
+        width: 52px;
     }
     .header-main {
-        text-align: center;
-    }
-    .header-main__text h1{
-        text-transform: uppercase;
-        font-size: 1em;
-        text-align: center;
-        color: #3159A6;
-    }
-    
-    /* .header-main {
         overflow: hidden;
-    } */
-
-    /* .header-main__text {
+    }
+    .header-main__text {
         display: none;
-    } */
-
+    }
     .header-main__text--marquee {
         display: inline-block;
     }
-
     .footer-text {
         font-size: 1.1rem;
         text-align: center;
@@ -180,14 +169,7 @@ img {
     .header-left {
         display: none;
     }
-
     .header-right {
         display: none;
-    }
-    .header-main__text h1{
-        text-transform: uppercase;
-        font-size: 1em;
-        text-align: center;
-        color: #3159A6;
     }
 }

@@ -1,73 +1,132 @@
 :root {
-	--blue: #0054a8;
-	--white: #ffffff;
-	--header-height: 200px;
-	--footer-height: 48px;
-	--text-color: #679be9;
+    --blue: #2799d9;
+    --white: #ffffff;
+    --header-height: 200px;
+    --footer-height: 48px;
+    --text-color: #2799d9;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-
 body {
-	background-image: url("../images/bg.png");
-	background-size: cover;
-	background-repeat: no-repeat;
+    background-image: url("../images/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
-  	background-position: center;
+    background-position: center;
+    overflow: hidden;
 }
 
 * {
-	font-family: 'Open Sans', sans-serif;
-	transition: all 0.1s ease;
+    font-family: 'Open Sans', sans-serif;
+    transition: all 0.1s ease;
 }
+
 
 /* title */
 
 .container-fluid .title {
-	font-weight: 600;
-	display: inline-block;
-	max-width: 1200px;
-	color: var(--blue);
-	font-size: 2vw !important;
+    font-weight: 600;
+    display: inline-block;
+    max-width: 1200px;
+    color: var(--blue);
+    font-size: 2vw !important;
 }
 
+
 /* style countdown */
+
 #countdown {
-	text-align: center;
-	max-width: 500px;
-	margin: 0 auto;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 #countdown .item h3 {
-	background: var(--blue);
-	color: #ffffff;
-	font-weight: 800;
-	border-radius: 10px;
-	padding: 10px 0px;
+    background: var(--blue);
+    color: #ffffff;
+    font-weight: 800;
+    border-radius: 10px;
+    padding: 10px 0px;
 }
 
 #countdown .item h5 {
-	margin-top: 10px;
-	padding: 3px 0px;
-	margin-bottom: 50px;
-	border: 3px solid var(--blue);
-	color: var(--blue);
-	font-weight: 500;
-	border-radius: 10px;
+    margin-top: 10px;
+    padding: 3px 0px;
+    margin-bottom: 50px;
+    border: 3px solid var(--blue);
+    color: var(--blue);
+    font-weight: 500;
+    border-radius: 10px;
 }
 
+.btn btn-outline-primary {
+    color: #2799d9;
+    border-color: #2799d9;
+}
+
+
 /* style loi chuc */
+
 .loiChuc .btn {
-	font-weight: 700;
-	border-width: 3px;
+    margin-top: -60px;
+    font-weight: 700;
+    border-width: 3px;
+    transition: all 0.6s;
+}
+
+.loiChuc h4 a:hover {
+    cursor: pointer;
+    background-color: #2799d9;
+    color: #fff !important;
+}
+
+#song1 {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
 }
 
 @media only screen and (max-width: 480px) {
-	.col-xs-6 {
-		width: 50% !important;
-	}
+    .col-xs-6 {
+        width: 50% !important;
+    }
+    #countdown {
+        transform: scale(0.7);
+    }
+}
 
-	#countdown {
-		transform: scale(0.7);
-	}
+@media screen and (max-width:1500px) {
+    #banner {
+        height: 510px;
+    }
+    #countdown {
+        transform: scale(0.7);
+    }
+}
+
+@media screen and (max-width:500px) {
+    #banner {
+        height: 290px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .col-xs-6 {
+        width: 50% !important;
+    }
+    #countdown {
+        transform: scale(0.7);
+    }
+}
+
+@media screen and (max-width:500px) {
+    #banner {
+        height: 290px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    #banner {
+        height: 200px;
+    }
 }
