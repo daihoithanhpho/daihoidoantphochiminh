@@ -86,7 +86,7 @@
         const app = (() => {
             const avtLS =
                 JSON.parse(localStorage.getItem("avtLS")) ||
-                "./images/logodh.png";
+                "https://i.im.ge/2022/07/18/FrHFAh.png";
 
             return {
                 isLoading: false,
@@ -99,11 +99,15 @@
                     mainLeftWrap.querySelector("img").src = avtLS;
 
                     inputs.forEach((input) => {
-                        input.oninput = function(e) {
+                        input.oninput = function (e) {
                             const span =
-                                this.parentElement.querySelector(".count-char__now");
+                                this.parentElement.querySelector(
+                                    ".count-char__now"
+                                );
                             const max = parseInt(
-                                this.parentElement.querySelector(".count-char__max").innerHTML
+                                this.parentElement.querySelector(
+                                    ".count-char__max"
+                                ).innerHTML
                             );
 
                             const lengthInp = input.value.length;
@@ -116,9 +120,11 @@
                         };
                     });
 
-                    mainLeftWrap.onclick = function() {
+                    mainLeftWrap.onclick = function () {
                         if (!_this.isLoading) {
-                            this.parentElement.querySelector(".main-left__inp").click();
+                            this.parentElement
+                                .querySelector(".main-left__inp")
+                                .click();
                         }
                     };
 
@@ -139,17 +145,25 @@
                         if (file) {
                             const reader = new FileReader();
                             reader.readAsDataURL(file);
-                            reader.onloadend = async() => {
+                            reader.onloadend = async () => {
                                 await axios
-                                    .post("https://dai-hoi-xi.herokuapp.com/post/upload-avt", {
-                                        data: reader.result,
-                                    })
+                                    .post(
+                                        "https://dai-hoi-xi.herokuapp.com/post/upload-avt",
+                                        {
+                                            data: reader.result,
+                                        }
+                                    )
                                     .then((res) => {
-                                        localStorage.setItem("avtLS", JSON.stringify(res.data));
-                                        mainLeftWrap.querySelector("img").src = res.data;
+                                        localStorage.setItem(
+                                            "avtLS",
+                                            JSON.stringify(res.data)
+                                        );
+                                        mainLeftWrap.querySelector(
+                                            "img"
+                                        ).src = res.data;
                                     })
                                     .catch((err) => {
-                                        console.log(err.response ? .data);
+                                        console.log(err.response?.data);
                                     })
                                     .finally(() => {
                                         setTimeout(endLoading, 2000);
@@ -158,7 +172,9 @@
                         }
                     };
 
-                    $(".main-right__form-submit-btn").onclick = async(e) => {
+                    $(".main-right__form-submit-btn").onclick = async (
+                        e
+                    ) => {
                         e.preventDefault();
                         const avt = mainLeftWrap.querySelector("img").src;
                         const content = inputs[0].value;
@@ -171,13 +187,18 @@
                             };
 
                             await axios
-                                .post("https://dai-hoi-xi.herokuapp.com/post/new-post", data)
+                                .post(
+                                    "https://dai-hoi-xi.herokuapp.com/post/new-post",
+                                    data
+                                )
                                 .then((res) => {
                                     inputs[0].value = null;
                                     inputs[1].value = null;
                                     window.location.href = "./index.html";
                                 })
-                                .catch((err) => console.log(err.response?.data));
+                                .catch((err) =>
+                                    console.log(err.response?.data)
+                                );
                         }
                     };
                 },
